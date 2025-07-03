@@ -1,0 +1,88 @@
+.newPostPage {
+  height: 100%;
+  display: flex;
+
+  .formContainer {
+    flex: 3;
+    overflow-y: auto; // Changed from "scroll" to "auto" for better UX
+
+    .wrapper {
+      margin: 30px 50px 100px 0px;
+
+      form {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .item {
+          flex: 1 1 30%; // Makes it more responsive
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          input,
+          select,
+          textarea {
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid gray;
+            font-size: 16px;
+            width: 100%;
+          }
+
+          textarea {
+            resize: vertical; // Allows user to expand description field if needed
+            min-height: 120px;
+          }
+
+          &.description {
+            width: 100%;
+            min-height: 320px; // Ensures proper spacing
+          }
+        }
+
+        .sendButton {
+          flex: 1;
+          max-width: 30%;
+          border-radius: 5px;
+          border: none;
+          background-color: teal;
+          color: white;
+          font-weight: bold;
+          cursor: pointer;
+          padding: 15px;
+          text-align: center;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: darkcyan;
+          }
+        }
+      }
+    }
+  }
+
+  .sideContainer {
+    flex: 2;
+    background-color: #fcf5f3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; // Adds some spacing
+
+    img {
+      max-width: 80%; // Adjusts for responsiveness
+      height: 180px;
+      object-fit: cover;
+      border-radius: 5px;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
