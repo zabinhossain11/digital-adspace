@@ -1,0 +1,89 @@
+@import "../../responsive.scss";
+
+.searchBar {
+  .type {
+    display: flex; // Ensures buttons are aligned properly
+
+    button {
+      padding: 14px 32px; // Slightly reduced for better UI
+      border: 1px solid #999;
+      border-bottom: none;
+      cursor: pointer;
+      background-color: white;
+      text-transform: capitalize;
+      transition: background-color 0.3s ease, color 0.3s ease; // Smooth transition
+
+      &.active {
+        background-color: black;
+        color: white;
+      }
+
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-right: none;
+      }
+      &:last-child {
+        border-top-right-radius: 5px;
+        border-left: none;
+      }
+    }
+  }
+
+  form {
+    border: 1px solid #999;
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    gap: 5px;
+    align-items: center;
+    box-sizing: border-box;
+
+    @include sm {
+      flex-direction: column;
+      border: none;
+      gap: 10px;
+    }
+
+    input {
+      border: none;
+      padding: 10px;
+      width: 200px;
+      outline: none; // Removes focus outline for a cleaner UI
+
+      @include lg {
+        padding: 8px;
+        width: 160px;
+      }
+      @include md {
+        width: 180px;
+      }
+      @include sm {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #999;
+      }
+    }
+
+    a {
+      flex: 1;
+      background-color: #fece51;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      border-left: 1px solid #999; // Ensures proper separation from inputs
+
+      button {
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        padding: 10px;
+
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}
